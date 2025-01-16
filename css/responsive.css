@@ -1,0 +1,26 @@
+/* ==============gallery page============== */
+
+/* ============contact form================= */
+@media (max-width: 600px) {
+    h1 {
+      font-size: 2em;
+    }
+  
+    .form-group {
+      flex-direction: column;
+      align-items:flex-start;
+    }
+  
+    .form-group label {
+      font-size: 1.25em;
+      margin-bottom: 10px;
+    }
+    .form-group input,.form-group textarea{
+      font-size: 1.20em;
+        width: 90%;
+  }
+    .submit-btn {
+      font-size: 1.3em;
+      padding: 13px;
+    }
+  }

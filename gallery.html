@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.filters {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.filter-button:hover {
+    background-color: #0056b3;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-item {
+    margin: 10px;
+    display: none; /* Hide all items by default */
+}
+
+.gallery-item img {
+    width: 200px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and larger phones */
+@media (max-width: 768px) {
+    .gallery-item img {
+        width: 150px; /* Smaller images for smaller screens */
+        height: 100px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .filter-button {
+        padding: 8px 15px; /* Smaller buttons */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .gallery-item {
+        margin: 5px; /* Less margin for smaller screens */
+    }
+
+    .gallery-item img {
+        width: 100%; /* Full width images */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .gallery {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Gallery</h1>
+        <div class="filters">
+            <button class="filter-button" data-filter="all">All</button>
+            <button class="filter-button" data-filter="nature">Nature</button>
+            <button class="filter-button" data-filter="architecture">Architecture</button>
+            <button class="filter-button" data-filter="travel">Travel</button>
+            <button class="filter-button" data-filter="food">Food</button>
+            <button class="filter-button" data-filter="people">People</button>
+            <button class="filter-button" data-filter="events">Events</button>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item nature"><img src="nature1.jpg" alt="Nature 1"></div>
+            <div class="gallery-item nature"><img src="nature2.jpg" alt="Nature 2"></div>
+            <div class="gallery-item architecture"><img src="architecture1.jpg" alt="Architecture 1"></div>
+            <div class="gallery-item travel"><img src="travel1.jpg" alt="Travel 1"></div>
+            <div class="gallery-item food"><img src="food1.jpg" alt="Food 1"></div>
+            <div class="gallery-item people"><img src="people1.jpg" alt="People 1"></div>
+            <div class="gallery-item events"><img src="event1.jpg" alt="Event 1"></div>
+            <div class="gallery-item events"><img src="event2.jpg" alt="Event 2"></div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+
+            galleryItems.forEach(item => {
+                if (filter === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = item.classList.contains(filter) ? 'block' : 'none';
+                }
+            });
+        });
+    });
+
+    // Show all items by default
+    galleryItems.forEach(item => {
+        item.style.display = 'block';
+    });
+});
+    </script>
+</body>
+</html>

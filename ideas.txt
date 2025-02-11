@@ -1,11 +1,7 @@
-oh yeah
-
 landing-page
 =============
-
 https://www.behance.net/gallery/180200623/Square-Photography-Portfolio-Template/modules/1017924103
 
-ive created a branch
-
-font
-======
+LOADING SCREEN & Hovering
+=========================
+https://www.dondregreen.com/
